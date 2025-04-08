@@ -1,0 +1,102 @@
+/* src/components/WeatherDetails.module.css */
+.detailsContainer {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 800px;
+  }
+  
+  .mainInfo {
+    background: linear-gradient(to right, #3494e6, #ec6ead);
+    color: white;
+    padding: 1.5rem;
+  }
+  
+  .location {
+    margin-bottom: 1rem;
+  }
+  
+  .location h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .dateTime {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+  }
+  
+  .currentWeather {
+    display: flex;
+    align-items: center;
+  }
+  
+  .weatherIcon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .tempInfo {
+    margin-left: 1rem;
+  }
+  
+  .temp {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .feelsLike {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .description {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  
+  .detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: #e9ecef;
+  }
+  
+  .detailBox {
+    background-color: white;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  
+  .detailBox h3 {
+    margin: 0 0 0.5rem 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  
+  .detailBox p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  @media (max-width: 600px) {
+    .currentWeather {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .tempInfo {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+    
+    .detailsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

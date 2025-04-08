@@ -1,0 +1,71 @@
+/* src/pages/HomePage.module.css */
+.homePage {
+  text-align: center;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 6px;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.detailsLink {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.detailsLink:hover {
+  background-color: #0056b3;
+}
+
+.welcome {
+  background-color: #f8f9fa;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.welcomeIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.welcome h2 {
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+.welcome p {
+  color: #6c757d;
+}
