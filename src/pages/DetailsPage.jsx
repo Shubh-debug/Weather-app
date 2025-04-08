@@ -1,6 +1,6 @@
 // src/pages/DetailsPage.jsx
-import React, { useState } from 'react';
-import SearchBar from '../components/SearchBar';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import WeatherDetails from '../components/WeatherDetails';
 import Loading from '../components/Loading';
 import { getWeatherByCity } from '../services/weatherAPI';
@@ -10,44 +10,43 @@ const DetailsPage = () => {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+  const city = searchParams.get('city');
 
-  const handleSearch = async (city) => {
-    try {
-      setLoading(true);
-      setError('');
-      const data = await getWeatherByCity(city);
-      setWeather(data);
-      setLoading(false);
-    } catch (err) {
-      setWeather(null);
-      setError('City not found or API error. Please try again.');
-      setLoading(false);
+  useEffect(() => {
+    if (city) {
+      const fetchWeather = async () => {
+        try {
+          setLoading(true);
+          setError('');
+          const data = await getWeatherByCity(city);
+          setWeather(data);
+          setLoading(false);
+        } catch (err) {
+          setWeather(null);
+          setError('City not found or API error. Please try again.');
+          setLoading(false);
+        }
+      };
+      fetchWeather();
     }
-  };
+  }, [city]);
 
   return (
     <div className={styles.detailsPage}>
-      <div className={styles.searchContainer}>
-        <h1>Weather Details</h1>
-        <p>Search for a city to view detailed weather information</p>
-        <SearchBar onSearch={handleSearch} />
-      </div>
+      <h1>Weather Details</h1>
       
       {error && <p className={styles.error}>{error}</p>}
       
       {loading ? (
         <Loading />
+      ) : weather ? (
+        <WeatherDetails weather={weather} />
       ) : (
-        weather ? (
-          <WeatherDetails weather={weather} />
-        ) : (
-          !error && (
-            <div className={styles.placeholder}>
-              <div className={styles.placeholderIcon}>🔍</div>
-              <h2>Enter a city name to see detailed weather information</h2>
-            </div>
-          )
-        )
+        <div className={styles.placeholder}>
+          <div className={styles.placeholderIcon}>🔍</div>
+          <h2>No weather data available</h2>
+        </div>
       )}
     </div>
   );
