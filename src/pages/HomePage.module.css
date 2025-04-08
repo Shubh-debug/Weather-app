@@ -1,21 +1,42 @@
 /* src/pages/HomePage.module.css */
 .homePage {
     text-align: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   }
   
   .hero {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto 3rem;
   }
   
   .hero h1 {
-    font-size: 2.5rem;
-    color: #343a40;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease-in;
   }
   
   .hero p {
-    color: #6c757d;
-    margin-bottom: 1.5rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   .error {
@@ -36,36 +57,56 @@
   
   .detailsLink {
     display: inline-block;
-    background-color: #007bff;
+    background: linear-gradient(90deg, #3498db, #2980b9);
     color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .detailsLink:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(90deg, #2980b9, #3498db);
   }
   
   .welcome {
-    background-color: #f8f9fa;
-    padding: 3rem 1rem;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2rem;
+    border-radius: 16px;
     max-width: 600px;
     margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .welcome:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
   
   .welcomeIcon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
   }
   
   .welcome h2 {
-    margin-bottom: 1rem;
-    color: #343a40;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 2rem;
   }
   
   .welcome p {
-    color: #6c757d;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
