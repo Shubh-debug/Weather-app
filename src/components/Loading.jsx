@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <div className={styles.loadingContainer}>
       <div className={styles.spinner}></div>
-      <p>Loading weather data...</p>
+      <p>Loading weather data.....</p>
     </div>
   );
 };
